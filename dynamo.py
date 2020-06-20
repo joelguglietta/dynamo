@@ -18,13 +18,6 @@ from PIL import Image
 import requests
 
 
-#_____________________________________________________________________________
-# DEFINE PATHS
-# Data faile name
-csvFile = 'dynamo_USDate.csv' 
-# Github path
-sourcePath = 'https://raw.githubusercontent.com/joelguglietta/dynamo/master/'
-
 #______________________________________________________________________________
 # FUNCTIONS
 
@@ -57,7 +50,16 @@ def download_image(url):
 
 def main():
     
-    # -- Data preparation ----------------------------------------------------
+    
+    # -- Define paths, file names ---------------------------------------------
+    # Data faile name
+    csvFile = 'dynamo_USDate.csv' 
+    # Github path
+    sourcePath = 'https://raw.githubusercontent.com/joelguglietta/dynamo/master/'
+       
+    
+    
+    # -- Data preparation -----------------------------------------------------
     # Load main data
     df           = load_data(sourcePath,csvFile, 0, 'object2datetime64')
     dynamoDf     = df.copy()
